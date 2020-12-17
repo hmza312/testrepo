@@ -139,11 +139,14 @@ const options = {
 };
 registration.showNotification(title, options);
 </script>
+<div style="align-items: 'center';">
 <input type = "button" onclick = "askPermission()" value = "Permission">  
 <input type = "button" onclick = "registerServiceWorker()" value = "Register">  
 <input type = "button" onclick = "subscribeUserToPush()" value = "Subscribe">  
+</div>
+<br/>
 <div class="container">
-  <form action="/action_page.php">
+  <form action="#">
     <div class="row">
       <div class="col-25">
         <label for="fname">Title</label>
