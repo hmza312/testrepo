@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="service_worker.js">
+    </script>
+<h1>The button Element</h1>
+<script>
+     function registerServiceWorker() {
+    return navigator.serviceWorker.register('/service_worker.js')
+    .then(function(registration) {
+      console.log('Service worker successfully registered.');
+      return registration;
+    })
+    .catch(function(err) {
+      console.error('Unable to register service worker.', err);
+    });
+  }
+   function subscribeUserToPush() {
+    return navigator.serviceWorker.register('./service_worker.js')
+    .then(function(registration) {
+      const subscribeOptions = {
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(
+          'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U'
+        )
+      };
+      console.log("Service worker registered");
+      return registration.pushManager.subscribe(subscribeOptions);
+    })
+    .then(function(pushSubscription) {
+      console.log('Received PushSubscription: ', JSON.stringify(pushSubscription));
+      return pushSubscription;
+    });
+  }
+  function askPermission(){
+    return new Promise(function(resolve, reject) {
+      const permissionResult = Notification.requestPermission(function(result) {
+        resolve(result);
+      });
+  
+      if (permissionResult) {
+        permissionResult.then(resolve, reject);
+        console.log(resolve)
+      }
+    })
+    .then(function(permissionResult) {
+      if (permissionResult !== 'granted') {
+        throw new Error('We weren granted permission.');
+      }
+    });
+  }
+</script>
+<input type = "button" onclick = "askPermission()" value = "Permission">  
+<input type = "button" onclick = "registerServiceWorker()" value = "send">  
+ 
+</body>
+</html>
