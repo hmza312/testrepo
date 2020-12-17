@@ -135,11 +135,11 @@
   var icon;
   function onImageChangebagde (event){
     var inputElement = document.getElementById('badge'); 
-  var theirInput = ''; 
+  
   inputElement.addEventListener('change', function(e) { 
-    theirInput = e.target.files[0];  
+    badge = e.target.files[0];  
   });  
-  console.log("badge",theirInput)
+  console.log("badge",badge)
   };
   function onImageChangeicon (event){
     var inputElement = document.getElementById('icon'); 
