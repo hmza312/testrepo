@@ -152,22 +152,22 @@
   var registration;
   registration=registerServiceWorker()
   function notification(){
-//   var title1 = document.getElementById("title").value;
-//   var body = document.getElementById("body").value;
-//   const title = title1;
-// const options = {
-//   body:body,
-//   icon: icon,
-//   badge: badge
-// };
+  var title1 = document.getElementById("title").value;
+  var body = document.getElementById("body").value;
+  const title = title1;
+const options = {
+  body:body,
+  // icon: icon,
+  // badge: badge
+};
 
 return navigator.serviceWorker.register('./service_worker.js')
     .then(function(registration) {
       console.log("send Notification")
-const title = 'Simple Title';
-const options = {
-  body: 'Simple piece of body text.\nSecond line of body text :)'
-};
+// const title = 'Simple Title';
+// const options = {
+//   body: 'Simple piece of body text.\nSecond line of body text :)'
+// };
       console.log('Service worker successfully registered.');
       return registration.showNotification(title, options);;
   
