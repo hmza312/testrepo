@@ -136,7 +136,7 @@
   function onImageChangebagde (event){
     var inputElement = document.getElementById('badge'); 
   
-  inputElement.addEventListener('change', function(e) { 
+  inputElement.addEventListener('onchange', function(e) { 
     badge = e.target.files[0];  
   });  
   console.log("badge",badge)
@@ -144,7 +144,7 @@
   function onImageChangeicon (event){
     var inputElement = document.getElementById('icon'); 
 
-  inputElement.addEventListener('change', function(e) { 
+  inputElement.addEventListener('onchange', function(e) { 
     icon = e.target.files[0];  
   });  
   console.log("icon",icon)
