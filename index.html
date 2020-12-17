@@ -165,9 +165,10 @@ const title = 'Simple Title';
 const options = {
   body: 'Simple piece of body text.\nSecond line of body text :)'
 };
-
-serviceWorkerRegistration.showNotification(title, options);
-
+navigator.serviceWorker.register('./service_worker.js')
+    .then(registration => {
+  registration.showNotification(title, options);
+})
 
 
   }
