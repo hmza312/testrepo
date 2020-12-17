@@ -131,18 +131,23 @@
       }
     });
   }
-  let badge;
-  let icon;
+  var badge;
+  var icon;
   function onImageChangebagde (event){
-    if (event.target.files && event.target.files[0]) {
-       badge = event.target.files[0];
-     
-    }
+    var inputElement = document.getElementById('badge'); 
+  var theirInput = ''; 
+  inputElement.addEventListener('change', function(e) { 
+    theirInput = e.target.files[0];  
+  });  
+  console.log("badge",theirInput)
   };
   function onImageChangeicon (event){
-    if (event.target.files && event.target.files[0]) {
-       icon = event.target.files[0];
-       }
+    var inputElement = document.getElementById('icon'); 
+
+  inputElement.addEventListener('change', function(e) { 
+    icon = e.target.files[0];  
+  });  
+  console.log("icon",icon)
   };
   function notification(){
   var title1 = document.getElementById("title").value;
