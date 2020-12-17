@@ -19,7 +19,7 @@
         display: inline-block;
       }
       
-      input[type=submit] {
+      input[type=button] {
         background-color: #4CAF50;
         color: white;
         padding: 12px 20px;
@@ -29,7 +29,7 @@
         float: right;
       }
       
-      input[type=submit]:hover {
+      input[type=button]:hover {
         background-color: #45a049;
       }
       
@@ -200,22 +200,8 @@ return navigator.serviceWorker.register('./service_worker.js')
         <input type="text" id="body" name="body" placeholder="Your Notification Body..">
       </div>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="country">Badge</label>
-      </div>
-      <div class="col-75">
-        <input type="file" id="badge" name="badge" placeholder="Your Notification Badge" onchange="onImageChangebagde()">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="country">Icon</label>
-      </div>
-      <div class="col-75">
-        <input type="file" id="icon" name="icon" placeholder="Your Notification icon" onchange="onImageChangeicon()">
-      </div>
-    </div>
+    
+      
     <div class="row">
       <input type="button" value="Submit" onclick="notification()">
     </div>
