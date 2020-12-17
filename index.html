@@ -160,13 +160,14 @@
 //   icon: icon,
 //   badge: badge
 // };
-console.log("send Notification")
+
+return navigator.serviceWorker.register('./service_worker.js')
+    .then(function(registration) {
+      console.log("send Notification")
 const title = 'Simple Title';
 const options = {
   body: 'Simple piece of body text.\nSecond line of body text :)'
 };
-navigator.serviceWorker.register('./service_worker.js')
-    .then(function(registration) {
       console.log('Service worker successfully registered.');
       return registration.showNotification(title, options);;
   
