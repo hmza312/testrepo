@@ -131,13 +131,30 @@
       }
     });
   }
-  const title = 'Icon Notification';
+  let badge;
+  let icon;
+  function onImageChangebagde (event){
+    if (event.target.files && event.target.files[0]) {
+       badge = event.target.files[0];
+     
+    }
+  };
+  function onImageChangeicon (event){
+    if (event.target.files && event.target.files[0]) {
+       icon = event.target.files[0];
+       }
+  };
+  function notification(){
+  var title = document.getElementById("title").value;
+  var body = document.getElementById("body").value;
+  const title = title;
 const options = {
-  body:"",
-  icon: '/images/demos/icon-512x512.png',
-  badge: '/images/demos/badge-128x128.png'
+  body:body,
+  icon: icon,
+  badge: badge
 };
 registration.showNotification(title, options);
+  }
 </script>
 <div style="align-items: 'center';">
 <input type = "button" onclick = "askPermission()" value = "Permission">  
@@ -168,7 +185,7 @@ registration.showNotification(title, options);
         <label for="country">Badge</label>
       </div>
       <div class="col-75">
-        <input type="file" id="badge" name="badge" placeholder="Your Notification Badge">
+        <input type="file" id="badge" name="badge" placeholder="Your Notification Badge" onchange="onImageChangebagde()">
       </div>
     </div>
     <div class="row">
@@ -176,11 +193,11 @@ registration.showNotification(title, options);
         <label for="country">Icon</label>
       </div>
       <div class="col-75">
-        <input type="file" id="icon" name="icon" placeholder="Your Notification icon">
+        <input type="file" id="icon" name="icon" placeholder="Your Notification icon" onchange="onImageChangeicon()">
       </div>
     </div>
     <div class="row">
-      <input type="submit" value="Submit">
+      <input type="button" value="Submit" onclick="notification()">
     </div>
   </form>
 </div>
