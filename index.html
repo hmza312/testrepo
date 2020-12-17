@@ -149,6 +149,8 @@
   });  
   console.log("icon",icon)
   };
+  var registration;
+  registration=registerServiceWorker()
   function notification(){
 //   var title1 = document.getElementById("title").value;
 //   var body = document.getElementById("body").value;
@@ -158,12 +160,12 @@
 //   icon: icon,
 //   badge: badge
 // };
-var registration;
+
 const title = 'Simple Title';
 const options = {
   body: 'Simple piece of body text.\nSecond line of body text :)'
 };
-registration=registerServiceWorker()
+
 registration.showNotification(title, options);
 
   }
