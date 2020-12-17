@@ -165,8 +165,10 @@ const title = 'Simple Title';
 const options = {
   body: 'Simple piece of body text.\nSecond line of body text :)'
 };
+runtime.register().then(registration => {
+  registration.showNotification(title, options);
+})
 
-registration.showNotification(title, options);
 
   }
 </script>
