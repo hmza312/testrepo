@@ -150,15 +150,20 @@
   console.log("icon",icon)
   };
   function notification(){
-  var title1 = document.getElementById("title").value;
-  var body = document.getElementById("body").value;
-  const title = title1;
+//   var title1 = document.getElementById("title").value;
+//   var body = document.getElementById("body").value;
+//   const title = title1;
+// const options = {
+//   body:body,
+//   icon: icon,
+//   badge: badge
+// };
+const title = 'Simple Title';
 const options = {
-  body:body,
-  icon: icon,
-  badge: badge
+  body: 'Simple piece of body text.\nSecond line of body text :)'
 };
 registration.showNotification(title, options);
+
   }
 </script>
 <div style="align-items: 'center';">
