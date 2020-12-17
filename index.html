@@ -158,10 +158,12 @@
 //   icon: icon,
 //   badge: badge
 // };
+var registration;
 const title = 'Simple Title';
 const options = {
   body: 'Simple piece of body text.\nSecond line of body text :)'
 };
+registration=registerServiceWorker()
 registration.showNotification(title, options);
 
   }
